@@ -1,4 +1,4 @@
-import { AnalysisReason, AnalysisResult, Confidence, PagePayload, RiskLevel } from "../shared/types";
+import { AnalysisReason, AnalysisResult, BiasLevel, Confidence, PagePayload, RiskLevel } from "../shared/types";
 import { SOURCE_PROFILES } from "./source-profiles";
 
 const LOW_TRUST_HINTS = ["-news-now", "patriot", "truth", "viral", "dailybuzz", "uncensored"];
@@ -134,11 +134,11 @@ export function analyzeLocally(page: PagePayload): AnalysisResult {
 
   const leftScore = countMatches(combined, LEFT_CUES);
   const rightScore = countMatches(combined, RIGHT_CUES);
-  const directionalDelta = rightScore - leftScore;
-  let bias = clamp(50 + directionalDelta * 8, 1, 100);
-
-  if (leftScore + rightScore <= 2) {
-    bias = 50;
+  let bias: BiasLevel = "Center";
+  if (leftScore > rightScore + 2) {
+    bias = "Low";
+  } else if (rightScore > leftScore + 2) {
+    bias = "High";
   }
 
   reliability = clamp(reliability, 0, 100);

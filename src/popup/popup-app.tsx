@@ -107,7 +107,7 @@ export function PopupApp(): JSX.Element {
               </div>
               <div className="metric">
                 <div className="metric-label">Bias</div>
-                <div className="metric-value">{result.scores.bias}%</div>
+                <div className="metric-value">{result.scores.bias}</div>
               </div>
               <div className="metric">
                 <div className="metric-label">Confidence</div>

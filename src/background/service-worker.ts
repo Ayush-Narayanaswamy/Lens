@@ -150,7 +150,7 @@ function formatAiPrompt(result: AnalysisResult): string {
     `Page title: ${result.page.title}`,
     `Domain: ${result.page.domain}`,
     `Reliability score: ${result.scores.reliability}/100`,
-    `Bias score: ${result.scores.bias}/100`,
+    `Bias level: ${result.scores.bias}`,
     `Risk level: ${result.scores.risk}`,
     "Signals:",
     reasonBlock,

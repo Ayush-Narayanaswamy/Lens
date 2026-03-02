@@ -95,7 +95,7 @@ export function HistoryApp(): JSX.Element {
             </div>
             <p className="small">{item.page.url}</p>
             <p className="small">
-              Reliability {item.scores.reliability} • Bias {item.scores.bias}% • Confidence {item.scores.confidence}
+              Reliability {item.scores.reliability} • Bias {item.scores.bias} • Confidence {item.scores.confidence}
             </p>
             <div className="row">
               <span className="small">{new Date(item.createdAt).toLocaleString()}</span>

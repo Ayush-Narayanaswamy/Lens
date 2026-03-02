@@ -1,4 +1,5 @@
 export type RiskLevel = "Low" | "Medium" | "High";
+export type BiasLevel = "Low" | "Center" | "High";
 export type Confidence = "Low" | "Medium" | "High";
 
 export interface PagePayload {
@@ -20,7 +21,7 @@ export interface AnalysisReason {
 
 export interface AnalysisScores {
   reliability: number;
-  bias: number;
+  bias: BiasLevel;
   risk: RiskLevel;
   confidence: Confidence;
 }
