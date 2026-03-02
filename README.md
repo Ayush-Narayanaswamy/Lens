@@ -6,7 +6,7 @@ Lens is a browser helper that checks the page you are on and gives you simple si
 - Risk level (Low, Medium, High)
 - Short explanation of why it was flagged
 
-It is an assistant, not a final truth judge.
+In shorthand, "Lens" is a fake news detector that as a Chrome side-panel give users an instant credibility check on any article page by combining transparent rule-based analysis with lightweight AI explanation: the extension reads the visible page content (headline, body text, source domain, metadata like author/date, and citation links), then computes a reliability score, a 1–100 bias score, and a risk level using deterministic signals such as source reputation profiles, sensational-language detection, citation depth, and transparency indicators so users can see consistent, explainable outputs rather than black-box predictions; the product is built with a modern TypeScript stack (React UI, Vite build pipeline, and a Manifest V3 Chrome runtime with content scripts + background worker), stores local history in browser storage for fast repeat checks, and uses Ollama Cloud API for a short natural-language summaries on why the current source was flagged or passed as reputable.
 
 ## What this project does
 
@@ -15,8 +15,6 @@ When you click Analyze, Lens reads visible text on the current page and checks t
 - Sensational wording
 - Citation depth
 - Basic transparency signals (author/date)
-
-It can also add an AI explanation (Ollama), but the core scoring works without AI.
 
 ## Get the code
 
@@ -51,8 +49,6 @@ This creates a dist folder with the extension files.
 4. Select the dist folder from this project
 5. Pin Lens from the Extensions menu
 
-Now click the Lens icon. It opens on the right side.
-
 ## How to use
 
 1. Open any news/article page
@@ -65,35 +61,4 @@ Now click the Lens icon. It opens on the right side.
    - Risk level
    - Why flagged list
 
-You can also open History from inside Lens.
-
-## Optional AI explanation setup
-
-Lens can call Ollama for a natural language explanation.
-
-1. Copy .env.example to .env
-2. Fill values you want (local Ollama or Ollama cloud)
-3. Rebuild:
-
-```bash
-npm run build
-```
-
-4. Reload Lens in chrome://extensions
-
-## Notes
-
-- This tool is for guidance only.
-- Always cross-check important claims with multiple sources.
-- Keep your .env private. Do not upload it to GitHub.
-
-## Troubleshooting
-
-If Lens does not update after changes:
-1. Run npm run build again
-2. Go to chrome://extensions
-3. Click Reload on Lens
-
-If AI explanation says skipped:
-- Your endpoint/key/model may be wrong, or rate limit was hit
-- Core reliability and bias scoring will still work
+You can also open History from inside Lens
