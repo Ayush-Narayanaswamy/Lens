@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Lens",
+  "version": "0.1.0",
+  "description": "Assistive reliability and bias signals for any webpage.",
+  "permissions": ["activeTab", "storage", "tabs", "scripting", "sidePanel"],
+  "host_permissions": ["<all_urls>", "http://localhost:11434/*", "http://127.0.0.1:11434/*", "https://ollama.com/*", "https://api.ollama.com/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Lens"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["history.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
