@@ -61,4 +61,4 @@ This creates a dist folder with the extension files.
    - Risk level
    - Why flagged list
 
-You can also open History from inside Lens
+You can also open History from inside Lens to view all the old sites that Lens has analyzed
