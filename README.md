@@ -1,6 +1,6 @@
 # Lens Chrome Extension
 
-Lens is an extension that checks the page you are on and gives you simple signals for:
+Lens is an extension that checks the page you are on and gives you signals for:
 - Reliability (how trustworthy the page looks)
 - Bias score (1 to 100)
 - Risk level (Low, Medium, High)
