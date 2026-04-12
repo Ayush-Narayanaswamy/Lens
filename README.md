@@ -1,6 +1,6 @@
 # Lens
 
-Lens is a browser extension that checks the page you are on and gives you signals for:
+Lens is a downloadable browser extension that checks the page you are on and gives you signals for:
 - Reliability (how trustworthy the page looks)
 - Bias score (1 to 100)
 - Risk level (Low, Medium, High)
@@ -28,7 +28,7 @@ git clone https://github.com/Ayush-Narayanaswamy/Lens.git
 cd Lens
 ```
 
-## Install and build (simple)
+## Install and build
 
 1. Install Node.js LTS from https://nodejs.org
 2. In the project folder, run:
